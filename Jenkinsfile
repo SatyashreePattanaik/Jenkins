@@ -18,3 +18,5 @@ Pipeline
         sh "python main.py"
       }
     }
+  }
+}
