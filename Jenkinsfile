@@ -1,24 +1,17 @@
-pipeline
-{
-  agent{
-    label "s1"
-  }
-  stages
-  {
-    stage("GIT")
-    {
-      steps
-      {
-        git "https://github.com/SatyashreePattanaik/Jenkins.git"
-      }
+pipeline {
+    agent {
+	    label 's1'
     }
-    stage("Run")
-    {
-      steps
-      {
-        sh "java demo.java"
-        sh "python3 main.py"
-      }
+
+    stages {
+        stage('Build') {
+            steps {
+                git 'https://github.com/SanjeevaSomisetti49/pipeline_project.git'
+                sh "python3 main.py"
+		        sh "java Demo.java"
+            }
+        }
     }
-  }
 }
+      
+      
